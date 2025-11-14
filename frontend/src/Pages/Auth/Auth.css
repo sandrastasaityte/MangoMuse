@@ -1,0 +1,57 @@
+.auth-page {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+  min-height: calc(100vh - 80px);
+  background: #fffaf6;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 480px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  padding: 24px;
+}
+
+.auth-title {
+  text-align: center;
+  color: #ff6600;
+  margin-bottom: 16px;
+  font-size: 22px;
+}
+
+.auth-toggle {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.toggle-btn {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  background: #fafafa;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.toggle-btn.active {
+  background: #ff6600;
+  color: #fff;
+  border-color: #ff6600;
+}
+
+.auth-form {
+  margin-top: 8px;
+}
+
+/* small responsive tweak */
+@media (max-width: 520px) {
+  .auth-card { padding: 16px; }
+  .auth-title { font-size: 18px; }
+}
