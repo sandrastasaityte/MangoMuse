@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom"; // <-- import
+import React, { useState, useEffect, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Home.css";
 import { cakes, featuredCakes, categories, specialOffers } from "../../assets/cakesData";
+import { CartContext } from "../../Context/CartContext"; // <-- import
 
 const Home = () => {
   const [currentHero, setCurrentHero] = useState(0);
-  const navigate = useNavigate(); // <-- initialize navigation
+  const navigate = useNavigate();
+  const { addToCart } = useContext(CartContext); // <-- use context
 
   // Hero slider autoplay
   useEffect(() => {
@@ -32,7 +34,9 @@ const Home = () => {
         <div className="hero-overlay">
           <h1>Delicious Cakes for Every Occasion</h1>
           <p>Explore our collection and find your favorite</p>
-          <button className="hero-btn" onClick={() => navigate("/cakes")}>Shop Now</button>
+          <button className="hero-btn" onClick={() => navigate("/cakes")}>
+            Shop Now
+          </button>
         </div>
       </div>
 
@@ -46,7 +50,12 @@ const Home = () => {
               <div className="cake-info">
                 <h3>{cake.name}</h3>
                 <p>${cake.price}</p>
-                <button className="add-cart-btn">Add to Cart</button>
+                <button
+                  className="add-cart-btn"
+                  onClick={() => addToCart(cake)}
+                >
+                  Add to Cart
+                </button>
               </div>
             </div>
           ))}
@@ -57,13 +66,16 @@ const Home = () => {
       <section className="categories-section">
         <h2>Explore Our Categories</h2>
         <div className="categories-grid">
-          {categories.map((cat, index) => (
+          {categories.map((cat) => (
             <div
               key={cat.id}
               className="category-card"
-              onClick={() => goToCategory(cat.name)} // <-- click navigates
+              onClick={() => goToCategory(cat.name)}
             >
-              <img src={cakes[index * 5]?.image} alt={cat.name} />
+              <img
+                src={cakes.find((c) => c.category === cat.name)?.image}
+                alt={cat.name}
+              />
               <div className="category-overlay">
                 <h3>{cat.name}</h3>
               </div>
@@ -82,7 +94,12 @@ const Home = () => {
               <div className="special-overlay">
                 <h3>{offer.title}</h3>
                 <p>{offer.description}</p>
-                <button className="shop-btn" onClick={() => navigate("/cakes")}>Shop Now</button>
+                <button
+                  className="shop-btn"
+                  onClick={() => addToCart(cakes[idx])} // <-- now add to cart works
+                >
+                  Add to Cart
+                </button>
               </div>
             </div>
           ))}

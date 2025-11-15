@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./NewArrivals.css";
 import { cakes } from "../../assets/cakesData";
+import { CartContext } from "../../Context/CartContext";
 
 const NewArrivals = ({ count = 8 }) => {
   const newCakes = cakes.slice(-count);
+  const { addToCart } = useContext(CartContext);
 
   return (
     <div className="newarrivals-container">
@@ -18,7 +20,7 @@ const NewArrivals = ({ count = 8 }) => {
             <p className="price">${cake.price}</p>
             <button
               className="add-to-cart"
-              onClick={() => alert(`${cake.name} added to cart!`)}
+              onClick={() => addToCart(cake)}
             >
               Add to Cart
             </button>
