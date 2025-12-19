@@ -1,33 +1,32 @@
 backend/
-├── server.js
-├── package.json
-├── public/
-│   └── images/
-├── src/
-│   ├── config/
-│   │   └── db.js  (not used in your demo but included)
-│   ├── data/
-│   │   ├── cakeData.js
-│   │   ├── categoryData.js
-│   │   ├── specialOffers.js
-│   │   └── reviewData.js
-│   ├── controllers/
-│   │   ├── cakeController.js
-│   │   ├── categoryController.js
-│   │   ├── reviewsController.js
-│   │   ├── cartController.js
-│   │   └── searchController.js
-│   ├── routes/
-│   │   ├── cakeRoutes.js
-│   │   ├── categoryRoutes.js
-│   │   ├── reviewRoutes.js
-│   │   ├── cartRoutes.js
-│   │   └── searchRoutes.js
-│   ├── utils/
-│   │   ├── fileStorage.js   (readJSON/writeJSON)
-│   ├── middleware/
-│   │   └── errorHandler.js
-└── README.md
+│
+├─ server.js
+├─ package.json
+├─ public/
+│   └─ images/        # put pics1.jpg ... pics62.jpg here
+│
+├─ src/
+│   ├─ Components/
+│   │   ├─ Controllers/
+│   │   │   ├─ cakeController.js
+│   │   │   ├─ reviewController.js
+│   │   │   ├─ cartController.js
+│   │   │   └─ searchController.js
+│   │   │
+│   │   └─ routes/
+│   │       ├─ cakeRoutes.js
+│   │       ├─ reviewRoutes.js
+│   │       ├─ cartRoutes.js
+│   │       └─ searchRoutes.js
+│   │
+│   └─ middleware/
+│       └─ errorHandler.js
+│
+└─ data/
+    ├─ reviews.json   # optional
+    └─ cart.json      # optional
+
+
 2)Check endpoints (quick test):
 
 GET /api/cakes → list all cakes (supports ?page=1&limit=20)

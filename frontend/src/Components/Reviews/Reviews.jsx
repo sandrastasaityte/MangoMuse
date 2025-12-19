@@ -14,7 +14,6 @@ const Reviews = () => {
     carouselRef.current.scrollBy({ left: 300, behavior: "smooth" });
   };
 
-  // Update active index based on scroll position
   useEffect(() => {
     const carousel = carouselRef.current;
 

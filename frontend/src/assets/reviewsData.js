@@ -31,7 +31,7 @@ export const reviews = [
   },
   {
     id: 5,
-    name: "Emma R.",
+    name: "Sandra R.",
     rating: 5,
     comment: "The strawberry cake was stunning and delicious!",
     image: "/assets/user-5.png"
@@ -42,5 +42,12 @@ export const reviews = [
     rating: 4,
     comment: "Perfect cakes for birthdays and events. Excellent service!",
     image: "/assets/user-6.png"
+  },
+   {
+    id: 7,
+    name: "Laura W.",
+    rating: 4,
+    comment: "Perfect cakes for birthdays and events. Excellent service!",
+    image: "/assets/user-7.png"
   },
 ];

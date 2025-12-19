@@ -1,0 +1,87 @@
+/* src/Components/Cakes/CakeForm.css */
+
+.cake-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+.cake-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+}
+
+.cake-form input,
+.cake-form textarea,
+.cake-form select {
+  margin-top: 6px;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.cake-form input:focus,
+.cake-form textarea:focus,
+.cake-form select:focus {
+  border-color: #ff6f61;
+  outline: none;
+}
+
+.cake-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.cake-form button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #ff6f61;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cake-form button:hover {
+  background-color: #e65b50;
+}
+
+.upload-area {
+  border: 2px dashed #ddd;
+  padding: 15px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.upload-area:hover {
+  border-color: #ff6f61;
+  background-color: #fff5f2;
+}
+
+.image-preview {
+  margin-top: 10px;
+  max-width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+}

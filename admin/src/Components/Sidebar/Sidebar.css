@@ -1,0 +1,13 @@
+.sidebar a {
+  padding: 12px;
+  display: block;
+  color: #444;
+  text-decoration: none;
+}
+
+.sidebar a.active {
+  background-color: #f0f0f0;
+  color: #000;
+  font-weight: bold;
+  border-left: 4px solid #ff9800;
+}
